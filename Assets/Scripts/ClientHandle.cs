@@ -12,6 +12,8 @@ public class ClientHandle : MonoBehaviour
         Client.instance.myid = _myId;
         ClientSend.WelcomeReceived();
 
+        Debug.Log("commit test");
+
         //TODO: Send welcome packet receive
     }
 }
