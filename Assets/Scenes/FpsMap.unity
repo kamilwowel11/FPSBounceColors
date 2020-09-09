@@ -950,6 +950,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1407034701 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+  m_PrefabInstance: {fileID: 5717424469511137142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1980724460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,8 +1196,40 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 16bced111543c98419df66e527a1df59, type: 2}
+    - target: {fileID: 5717424468323658923, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: beam
+      value: 
+      objectReference: {fileID: 1407034701}
     - target: {fileID: 5717424468323658925, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.023584902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.023584902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717424468964127459, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}
+      propertyPath: LightsModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5717424469306236935, guid: a7baddb0b0e753a47b79e865f0b3a213, type: 3}

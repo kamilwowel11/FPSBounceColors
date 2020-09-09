@@ -8,7 +8,7 @@ public class SpawnProjectiles : MonoBehaviour
     public GameObject firePoint;
     public List<GameObject> vfx = new List<GameObject>();
     public ParticleSystem beam;
-    public int colorBeam;
+    public static int colorBeam = 1;
     private Color red = new Color(1,0,0,1), blue = new Color(0, 0, 1, 1), green = new Color(0, 1, 0, 1);
     private GameObject effectToSpawn;
     private float timeToFire = 0f;
@@ -18,8 +18,6 @@ public class SpawnProjectiles : MonoBehaviour
     {
         effectToSpawn = vfx[0];
         beam = GetComponentInChildren<ParticleSystem>();
-
-
     }
 
     void Update()
@@ -37,7 +35,7 @@ public class SpawnProjectiles : MonoBehaviour
         if (firePoint != null)
         {
             colorBeam = Random.Range(1, 4);
-            Debug.Log($"Color beam : {colorBeam}");
+            //Debug.Log($"Color beam : {colorBeam}");
 
             ParticleSystem.MainModule main = beam.main;
 

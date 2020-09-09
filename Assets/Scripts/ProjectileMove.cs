@@ -7,17 +7,17 @@ public class ProjectileMove : MonoBehaviour
 
     public float speed;
     public float fireRate;
+    public int colorBeam;
     public GameObject effectToSpawn;
-
-    // private bool bounced = false;
     private int amountOfBounce = 0;
 
 
     void Update()
     {
+        
         if (speed != 0)
         {
-            transform.position += transform.forward * (speed * Time.deltaTime*0.9f);
+            transform.position += transform.forward * (speed * Time.deltaTime * 0.9f);
         }
         else
         {
@@ -28,38 +28,20 @@ public class ProjectileMove : MonoBehaviour
     {
         if (collision.collider.tag.Equals("BounceWall"))
         {
-            
             speed -= 3;
-            Debug.Log("I hit BounceWall !");
+            // Debug.Log("I hit BounceWall !");
+            colorBeam = SpawnProjectiles.colorBeam;
+
+            //TODO: make colorBeam before the collision on wall;
+
+
+
             Vector3 v = Vector3.Reflect(transform.forward, collision.contacts[0].normal);
             transform.forward = v;
-            if (amountOfBounce == 1)
-            {
-                Debug.Log($"I bounced {amountOfBounce} times.");
-                speed = 0;
-                GameObject vfx;
-                
-                Destroy(gameObject);
+            
+            Debug.Log(colorBeam);
 
-
-                vfx = Instantiate(effectToSpawn);
-                vfx.transform.position = transform.position;
-                Destroy(vfx, 2f);
-            }
-            else if (amountOfBounce == 2)
-            {
-                Debug.Log($"I bounced {amountOfBounce} times.");
-                speed = 0;
-                GameObject vfx;
-
-                Destroy(gameObject);
-
-
-                vfx = Instantiate(effectToSpawn);
-                vfx.transform.position = transform.position;
-                Destroy(vfx, 2f);
-            }
-            else if (amountOfBounce == 3)
+            if (amountOfBounce == colorBeam)
             {
                 Debug.Log($"I bounced {amountOfBounce} times.");
                 speed = 0;
