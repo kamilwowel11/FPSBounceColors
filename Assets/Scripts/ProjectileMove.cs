@@ -9,6 +9,10 @@ public class ProjectileMove : MonoBehaviour
     public float fireRate;
     public int colorBeam;
     public GameObject effectToSpawn;
+    public GameObject spawnPoint;
+    public GameObject player;
+
+
     private int amountOfBounce = 0;
 
 
@@ -18,6 +22,10 @@ public class ProjectileMove : MonoBehaviour
         if (speed != 0)
         {
             transform.position += transform.forward * (speed * Time.deltaTime * 0.9f);
+            if (colorBeam == 0 )
+            {
+                colorBeam = SpawnProjectiles.colorBeam;
+            }
         }
         else
         {
@@ -29,17 +37,12 @@ public class ProjectileMove : MonoBehaviour
         if (collision.collider.tag.Equals("BounceWall"))
         {
             speed -= 3;
-            // Debug.Log("I hit BounceWall !");
-            colorBeam = SpawnProjectiles.colorBeam;
-
-            //TODO: make colorBeam before the collision on wall;
-
-
+            
 
             Vector3 v = Vector3.Reflect(transform.forward, collision.contacts[0].normal);
             transform.forward = v;
             
-            Debug.Log(colorBeam);
+            //Debug.Log(colorBeam);
 
             if (amountOfBounce == colorBeam)
             {
@@ -55,6 +58,10 @@ public class ProjectileMove : MonoBehaviour
                 Destroy(vfx, 2f);
             }
             amountOfBounce++;
+        }
+        else if (collision.collider.tag.Equals("Player"))
+        {
+            player.transform.position = spawnPoint.transform.position;
         }
     }
 
