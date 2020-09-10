@@ -43,15 +43,15 @@ public class SpawnProjectiles : MonoBehaviour
             {
                 case 1:
                     main.startColor = red;
-                    Debug.Log("Changing to red");
+                    //Debug.Log("Changing to red");
                     break;
                 case 2:
                     main.startColor = blue;
-                    Debug.Log("Changing to blue");
+                    //Debug.Log("Changing to blue");
                     break;
                 case 3:
                     main.startColor = green;
-                    Debug.Log("Changing to green");
+                    //Debug.Log("Changing to green");
                     break;
                 default:
                     break;

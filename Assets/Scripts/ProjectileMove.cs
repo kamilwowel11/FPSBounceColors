@@ -9,8 +9,8 @@ public class ProjectileMove : MonoBehaviour
     public float fireRate;
     public int colorBeam;
     public GameObject effectToSpawn;
-    public GameObject spawnPoint;
-    public GameObject player;
+    //public GameObject spawnPoint;
+    //public GameObject player;
 
 
     private int amountOfBounce = 0;
@@ -46,7 +46,7 @@ public class ProjectileMove : MonoBehaviour
 
             if (amountOfBounce == colorBeam)
             {
-                Debug.Log($"I bounced {amountOfBounce} times.");
+                //Debug.Log($"I bounced {amountOfBounce} times.");
                 speed = 0;
                 GameObject vfx;
 
@@ -61,7 +61,7 @@ public class ProjectileMove : MonoBehaviour
         }
         else if (collision.collider.tag.Equals("Player"))
         {
-            player.transform.position = spawnPoint.transform.position;
+            Debug.Log("I Hit Player !");
         }
     }
 
