@@ -12,9 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f; // Radius of the sphere to check
     public LayerMask groundMask; // control what object this sphere check for . We don't want to register a standing on the ground because it sticks with player
-    public Transform spawnPoint;
-    public GameObject player;
-
 
     Vector3 velocity;
     bool isGrounded;
@@ -47,16 +44,16 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag.Equals("Projectile"))
-        {
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.collider.tag.Equals("Projectile"))
+    //    {
 
-            //TODO: Spawn point in anotehr file or just to work it for now 
-            // Cube spawning work
-            Debug.Log("Projectile hit me !");
-            player.transform.position = spawnPoint.position;
+    //        //TODO: Spawn point in anotehr file or just to work it for now 
+    //        // Cube spawning work
+    //        Debug.Log("Projectile hit me !");
+    //        player.transform.position = spawnPoint.position;
             
-        }
-    }
+    //    }
+    //}
 }

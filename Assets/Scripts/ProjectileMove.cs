@@ -61,7 +61,15 @@ public class ProjectileMove : MonoBehaviour
         }
         else if (collision.collider.tag.Equals("Player"))
         {
-            Debug.Log("I Hit Player !");
+            speed = 0;
+            GameObject vfx;
+
+            Destroy(gameObject);
+
+
+            vfx = Instantiate(effectToSpawn);
+            vfx.transform.position = transform.position;
+            Destroy(vfx, 2f);
         }
     }
 
